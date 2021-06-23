@@ -11,5 +11,5 @@ headers = {
 page = get(url, headers=headers)
 soup = BeautifulSoup(page.content, 'lxml')
 ## Header information
-title = soup.find_all('title')
-print(title)
+title = soup.find('title').get_text()
+print("$"+title.split(" ")[0])
